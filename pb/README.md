@@ -8,6 +8,6 @@ https://raw.githubusercontent.com/rootless-containers/proto/316d7ae30bc5f448f217
 
 ## Compile
 
-```console
-$ protoc-c --c_out=. rootlesscontainers.proto
+```bash
+protoc-c --c_out=. rootlesscontainers.proto
 ```
