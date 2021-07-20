@@ -35,7 +35,7 @@ git clone https://github.com/seccomp/libseccomp.git
 cd libseccomp
 git checkout v2.5.0
 ./autogen.sh
-./configure --prefix=/opt/seccomp && make && sudo make install
+./configure --prefix=/opt/libseccomp && make && sudo make install
 ```
 
 To install crun:
