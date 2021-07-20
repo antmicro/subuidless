@@ -42,7 +42,6 @@ To install crun:
 ```console
 git clone https://github.com/containers/crun.git
 cd crun
-hub checkout https://github.com/containers/crun/pull/438
 ./autogen.sh
 CFLAGS="-I/opt/libseccomp/include/" LDFLAGS="-L/opt/libseccomp/lib" ./configure && make && sudo make install
 ```
