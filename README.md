@@ -64,7 +64,12 @@ Listening on /home/user/.subuidless.sock
 
 Terminal 2:
 ```console
-$ RUN_OCI_SECCOMP_RECEIVER=~/.subuidless.sock unshare -r crun run -b ./test foo
+RUN_OCI_SECCOMP_RECEIVER=~/.subuidless.sock unshare -r crun run -b ./test foo
+```
+
+Inside container:
+
+```console
 / # cat /proc/self/uid_map
          0       1001          1
 / # touch foo
