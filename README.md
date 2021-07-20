@@ -23,7 +23,7 @@ Non-goals:
 * Provide security boundry across emulated IDs
 
 ## Requirements
-* crun with https://github.com/containers/crun/pull/438
+* crun with https://github.com/containers/crun/pull/438 (now merged, so mainline crun works)
 * libseccomp >= v2.5.0
 * libprotobuf-c
 
