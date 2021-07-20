@@ -60,7 +60,7 @@ Output:
 ```console
 Listening on /home/user/.subuidless.sock
 ...
-
+```
 
 Terminal 2:
 ```console
