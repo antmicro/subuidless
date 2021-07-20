@@ -30,7 +30,7 @@ Non-goals:
 **Note**: libseccomp >= v2.5.0 is not available as a dpkg/rpm package in most distros as of July 2020.
 
 To install libseccomp from the source onto a custom prefix (`/opt/libseccomp`):
-```console
+```bash
 git clone https://github.com/seccomp/libseccomp.git
 cd libseccomp
 git checkout v2.5.0
@@ -39,7 +39,7 @@ git checkout v2.5.0
 ```
 
 To install crun:
-```console
+```bash
 git clone https://github.com/containers/crun.git
 cd crun
 ./autogen.sh
@@ -49,7 +49,7 @@ CFLAGS="-I/opt/libseccomp/include/" LDFLAGS="-L/opt/libseccomp/lib" ./configure 
 ## Usage
 
 Terminal 1:
-```console
+```bash
 LIBSECCOMP_PREFIX=/opt/libseccomp ./make.sh
 mkdir -p ./test/rootfs && docker create --name foo alpine && docker export foo | tar Cx ./test/rootfs && docker rm -f foo
 ./subuidless ~/.subuidless.sock
@@ -62,7 +62,7 @@ Listening on /home/user/.subuidless.sock
 ```
 
 Terminal 2:
-```console
+```bash
 RUN_OCI_SECCOMP_RECEIVER=~/.subuidless.sock unshare -r crun run -b ./test foo
 ```
 
