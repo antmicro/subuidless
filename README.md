@@ -31,32 +31,36 @@ Non-goals:
 
 To install libseccomp from the source onto a custom prefix (`/opt/libseccomp`):
 ```console
-$ git clone https://github.com/seccomp/libseccomp.git
-$ cd libseccomp
-$ git checkout v2.5.0
-$ ./autogen.sh
-$ ./configure --prefix=/opt/seccomp && make && sudo make install
+git clone https://github.com/seccomp/libseccomp.git
+cd libseccomp
+git checkout v2.5.0
+./autogen.sh
+./configure --prefix=/opt/seccomp && make && sudo make install
 ```
 
 To install crun:
 ```console
-$ git clone https://github.com/containers/crun.git
-$ cd crun
-$ hub checkout https://github.com/containers/crun/pull/438
-$ ./autogen.sh
-$ CFLAGS="-I/opt/libseccomp/include/" LDFLAGS="-L/opt/libseccomp/lib" ./configure && make && sudo make install
+git clone https://github.com/containers/crun.git
+cd crun
+hub checkout https://github.com/containers/crun/pull/438
+./autogen.sh
+CFLAGS="-I/opt/libseccomp/include/" LDFLAGS="-L/opt/libseccomp/lib" ./configure && make && sudo make install
 ```
 
 ## Usage
 
 Terminal 1:
 ```console
-$ LIBSECCOMP_PREFIX=/opt/libseccomp ./make.sh
-$ mkdir -p ./test/rootfs && docker create --name foo alpine && docker export foo | tar Cx ./test/rootfs && docker rm -f foo
-$ ./subuidless ~/.subuidless.sock
+LIBSECCOMP_PREFIX=/opt/libseccomp ./make.sh
+mkdir -p ./test/rootfs && docker create --name foo alpine && docker export foo | tar Cx ./test/rootfs && docker rm -f foo
+./subuidless ~/.subuidless.sock
+```
+
+Output:
+```console
 Listening on /home/user/.subuidless.sock
 ...
-```
+
 
 Terminal 2:
 ```console
